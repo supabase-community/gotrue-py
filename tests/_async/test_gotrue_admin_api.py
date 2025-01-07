@@ -150,14 +150,14 @@ async def test_modify_confirm_email_using_update_user_by_id():
         }
     )
     assert response.user
-    assert not response.user.email_confirmed_at
+    assert not response.user.confirmed_at
     response = await service_role_api_client().update_user_by_id(
         response.user.id,
         {
             "email_confirm": True,
         },
     )
-    assert response.user.email_confirmed_at
+    assert response.user.confirmed_at
 
 
 async def test_delete_user_should_be_able_delete_an_existing_user():
@@ -254,7 +254,7 @@ async def test_verify_otp_with_non_existent_phone_number():
         )
         assert False
     except AuthError as e:
-        assert e.message == "User not found"
+        assert e.message == "Token has expired or is invalid"
 
 
 async def test_verify_otp_with_invalid_phone_number():
