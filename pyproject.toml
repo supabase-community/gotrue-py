@@ -28,7 +28,7 @@ pre-commit = "^4.0.1"
 pytest-cov = "^6.0.0"
 pytest-depends = "^1.0.1"
 pytest-asyncio = "^0.25.0"
-Faker = "^33.3.0"
+Faker = "^33.3.1"
 unasync-cli = "^0.0.9"
 
 [tool.poetry.group.dev.dependencies]
