@@ -222,7 +222,7 @@ class User(BaseModel):
     identities: Optional[List[UserIdentity]] = None
     is_anonymous: bool = False
     factors: Optional[List[Factor]] = None
-
+    banned_until: Optional[datetime] = None
 
 class UserAttributes(TypedDict):
     email: NotRequired[str]
